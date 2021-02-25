@@ -1,0 +1,57 @@
+# Object-Oriented-C-
+
+//Write a program which accept number from user and display its digits in reverse order
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	public:
+	  int iValue;
+	  
+	  Demo(int x)
+	  {
+		  
+		  this->iValue=x;
+	  }
+	  
+	  int Reverse()
+	  {
+		  
+		  int iDigit=0;
+		  int iRev=0;
+		  
+		  if(iValue<0)
+		  {
+			  iValue=-iValue;
+		  }
+		  
+		  while(iValue!=0)
+		  {
+			  iDigit=iValue%10;
+			  iRev=iRev*10+iDigit;
+			  
+			  iValue=iValue/10;
+		  }
+		  return iRev;
+	  }
+	
+};
+
+int main()
+{
+	int iValue=0;
+	int iRet=0;
+	
+	cout<<"Enter Number";
+	cin>>iValue;
+	
+	Demo *obj=new Demo(iValue);
+	iRet=obj->Reverse();
+	
+	cout<<"reverse Number is:"<<iRet;
+   
+    return 0;	
+}
