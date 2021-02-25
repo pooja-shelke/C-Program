@@ -1,0 +1,49 @@
+# Object-Oriented-C-
+
+//Accept number from user and display below pattern.
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	public :
+	
+	int iValue;
+	
+	Demo(int x)
+	{
+		this->iValue= x;
+	}
+	
+	void Display()
+	{
+		int i=0;
+		char ch='A';
+		
+		if(iValue<0)
+		{
+			iValue=-iValue;
+		}
+		
+		for(i=1;i<=iValue;i++)
+		{
+		   cout<<ch<<"\t";
+		   ch++;
+		}
+	}
+};
+
+int  main()
+{
+	int iValue=0;
+	
+	cout<<"Enter Number";
+	cin>>iValue;
+
+	Demo *obj=new Demo(iValue);
+	obj->Display();
+	
+	return 0;
+}
