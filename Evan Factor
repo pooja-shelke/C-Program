@@ -1,0 +1,51 @@
+# Object-Oriented-C-
+
+//Write a program which accept number from user and print even factors of that number.
+
+#include<iostream>
+using namespace std;
+class Demo
+{
+	public :
+	int iValue;
+	
+	Demo(int x)
+	{
+		this->iValue=x;
+	}
+	
+	void EvnFact()
+	{
+		int i=0;
+		int iRet=0;
+		
+		if(iValue<0)
+		{
+			iValue=-iValue;
+		}
+		
+		for(i=1;i<=iValue/2;i++)
+		{
+			iRet=iValue%i;
+			
+			if((i%2==0) && (iRet==0))
+			{
+				cout<<i<<"\t";
+			}
+		}
+	}
+};
+
+
+int main()
+{
+	int iValue=0;
+	
+	cout<<"Enter Number";
+	cin>>iValue;
+	
+	Demo obj(iValue);
+	obj.EvnFact();
+	
+	return 0;
+}
