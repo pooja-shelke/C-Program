@@ -1,0 +1,80 @@
+# Object-Oriented-C-
+
+/*Accept number of rows and number of columns from user and display below
+pattern.
+Input : iRow = 4 iCol = 4
+Output : * # # #
+* * # #
+* * * #
+* * * *
+*/
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	public :
+	
+	int iValue1;
+	int iValue2;
+	
+	Demo(int x,int y)
+	{
+		this->iValue1= x;
+		this->iValue2= y;
+	}
+	
+	void Display()
+	{
+		int i=0;
+		int j=0;
+		
+		if(iValue1<0)
+		{
+			iValue1=-iValue1;
+			
+		}
+		if(iValue2<0)
+		{
+			iValue2=-iValue2;
+		}
+		
+		for(i=iValue1;i>=1;i--)
+		{
+			for(j=1;j<=iValue2;j++)
+			{
+				if(j<=i)
+				{
+					cout<<"*"<<"\t";
+				}
+				else
+				{
+					cout<<"#"<<"\t";
+				}
+			}
+			cout<<"\n";
+		}
+		
+	}
+};
+
+int  main()
+{
+	int iValue1=0;
+	int iValue2=0;
+	
+	cout<<"Enter first Number";
+	cin>>iValue1;
+	
+	cout<<"Enter Second Number";
+	cin>>iValue2;
+	
+	Demo *obj=new Demo(iValue1,iValue2);
+
+    obj->Display();
+	
+	
+	return 0;
+}
