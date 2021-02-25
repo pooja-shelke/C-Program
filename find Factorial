@@ -1,0 +1,54 @@
+# Object-Oriented-C-
+
+//Write a program to find factorial of given number.
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	public :
+	int iValue;
+	
+	Demo(int iNo)
+	{
+		this->iValue=iNo;
+	}
+	
+	int Factorial()
+	{
+		int i=0;
+		int iAns=1;
+		
+		if(iValue<0)
+		{
+			iValue=-iValue;
+		}
+		for(int i=1;i<=iValue;i++)
+		{
+			iAns=iAns*i;
+			
+		}
+		return iAns;
+	}
+	
+};
+
+int main()
+{
+	int iValue=0;
+	int iRet=0;
+	
+	
+	cout<<"Enter Number";
+	cin>>iValue;
+	
+	Demo *obj=new Demo(iValue);
+	
+	iRet=obj->Factorial();
+	
+	cout<<"factorial of a number is:"<<iRet;
+  
+	return 0;
+}
