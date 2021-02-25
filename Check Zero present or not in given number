@@ -1,0 +1,69 @@
+# Object-Oriented-C-
+
+//Write a program which accept number from user and check whether it contains in it or not.
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	public :
+	int iValue;
+	
+	Demo(int iNo)
+	{
+		this->iValue=iNo;
+	}
+	
+	bool ChkZero()
+	{
+		int i=0;
+		int iDigit=0;
+		
+		while(iValue!=0)
+		{
+			iDigit=iValue%10;
+			
+			if(iDigit==0)
+			{
+				break;
+			}
+		
+			iValue=iValue/10;
+		}
+		
+		if(iDigit==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+};
+
+int main()
+{
+	int iValue=0;
+	bool bRet=false;
+	
+	cout<<"Enter Number";
+	cin>>iValue;
+	
+	Demo *obj=new Demo(iValue);
+	bRet=obj->ChkZero();
+	
+	if(bRet==true)
+	{
+		cout<<"Contains Zero";
+	}
+	else
+	{
+		cout<<"Not Contains Zero";
+	}
+	
+	return 0;
+}
