@@ -1,0 +1,57 @@
+# Object-Oriented-C-
+
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+	
+	public:
+	
+	int  Addition(int iNo1,int iNo2)         // If user Pass 2 Parameter then this function execute
+	{
+		int iAns=0;
+		iAns=iNo1+iNo2;
+		
+		return iAns;
+	}
+	
+	int  Addition(int iNo1,int iNo2,int iNo3)  //If user Pass 3 Parameter then this function execute
+	{
+		int iAns=0;
+		iAns=iNo1+iNo2+iNo3;
+		
+		return iAns;
+	}
+};
+
+int main()
+{
+	int iValue1=0;
+	int iValue2=0;
+	
+	int iValue3=0;
+	int iRet=0;
+	
+	cout<<"Enter first number";
+	cin>>iValue1;
+	
+	cout<<"Enter Second number";
+	cin>>iValue2;
+	
+	cout<<"Enter Second number";
+	cin>>iValue3;
+	
+	Demo *obj=new Demo();
+	iRet=obj->Addition(iValue1,iValue2);
+	 
+	cout<<"Adddition is:"<<iRet;
+	 
+	Demo *obj1=new Demo();
+	iRet=obj1->Addition(iValue1,iValue2,iValue3);
+	 
+	cout<<"Addition is :"<<iRet;
+  
+  return 0;
+}
