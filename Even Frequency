@@ -1,0 +1,61 @@
+# Object-Oriented-C-
+
+// Accept N numbers from user and return frequency of even numbers.
+// Input : N : 6
+// Elements : 85 66 3 80 93 88
+// Output : 3
+
+#include<iostream>
+
+using namespace std;
+
+int EvnFactNum(int *Arr,int  iValue)
+{
+	int i=0;
+	int iAns=0;
+	int iCnt=0;
+
+	for(i=0;i<iValue;i++)
+	{
+		iAns=Arr[i]%2;
+
+		if(iAns==0)
+		{
+			iCnt++;
+		}
+	}
+	return iCnt;
+}
+
+int main()
+{
+	int iValue=0;
+	int *Arr=NULL;
+	int iRet=0;
+	int i=0;
+
+	cout<<"Enter Value";
+	cin>>iValue;
+
+	Arr=new int(iValue);
+
+	cout<<"Enter Elements of the array";
+	for(i=0;i<iValue;i++)
+	{
+		cin>>Arr[i];
+	}
+
+ //   cout<<"Enter Elements of the array";
+	// for(i=0;i<iValue;i++)
+	// {
+	// 	cout<<Arr[i]<<"\t";
+	// }
+     
+    iRet= EvnFactNum(Arr,iValue);
+    
+    
+    cout<<"Frequency of the even number is:"<<iRet;
+
+	delete Arr;
+	return 0;
+}
