@@ -1,0 +1,48 @@
+#include<iostream>
+
+using namespace std;
+
+class Demo
+{
+public:
+    int i;        //Non Static   //Instance variable
+    int j;        //Non Static   //Instance varible
+    static int k; // static      //class Varible
+
+    Demo()
+    {
+        i=10;
+        j=20;
+    }
+
+     void fun()              //Non Static
+    {
+         cout<<"Inside fun\n";
+         cout<<"Value of i is:"<<i<<"\t"<<"Value of j is:"<<j<<"\n";   //Non static behaviour can access static as well as non static characteritics .
+         cout<<"Value os k is:"<<k;
+    }
+
+    static void gun()        //static function
+    {
+        cout<<"Inside gun\n";
+        //cout<<i<<"\t"<<j;   //static behaviour can access only static characteritics only.
+        cout<<"Value of K is:"<<k<<"\n";
+
+    }
+};
+
+int Demo::k=30;    //Initilize static characteritics
+
+
+int main()
+{
+
+    Demo::gun();     //We can call static member without creating the object.
+
+   // cout<<"Value of K is:"<<Demo::k<<"\n";//Without creating object we can access characteritics also.
+
+    Demo obj;       //Creating  object we can call static as well as non static.
+    obj.fun();
+
+    return 0;
+}
