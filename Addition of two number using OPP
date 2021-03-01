@@ -1,0 +1,59 @@
+# Object-Oriented-C-
+
+#include<iostream>
+
+using namespace std;
+
+class Arithmetic
+{
+    public :
+    int iNo1;
+    int iNo2;
+
+    Arithmetic(int i,int j)
+    {
+        iNo1=i;
+        iNo2=j;
+    }
+
+    int Addition()
+    {
+        int iAns=0;
+        iAns=iNo1+iNo2;
+        return iAns;
+    }
+
+    int Sub()
+    {
+        int iAns=0;
+        iAns=iNo1-iNo2;
+        return iAns;
+    }
+
+};
+
+
+int main()
+{
+    int iValue1=0;
+    int iValue2=0;
+    int iRet=0;
+
+    cout<<"Enter first number\n";
+    cin>>iValue1;
+
+    cout<<"Enter Second number\n";
+    cin>>iValue2;
+
+    Arithmetic obj(iValue1,iValue2);
+    iRet=obj.Addition();
+
+    cout<<"Addition is:"<<iRet<<"\n";
+
+    iRet=obj.Sub();
+
+    cout<<"Subtraction is:"<<iRet;
+
+    return 0;
+
+}
